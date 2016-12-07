@@ -7,6 +7,9 @@ release.properties
 dependency-reduced-pom.xml
 buildNumber.properties
 .mvn/timing.properties
+<<<<<<< HEAD
 
 # Exclude maven wrapper
 !/.mvn/wrapper/maven-wrapper.jar
+=======
+>>>>>>> f289118a6262486c5244673c4de377f0ccf86dfb
