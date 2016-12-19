@@ -58,8 +58,8 @@ public class ReplicatedJoin extends Configured implements Tool {
     }
 
     public static class JoinMap extends Mapper<LongWritable, Text, Text, Text> {
-        public static final String DISTCACHE_FILENAME_CONFIG = "replicatedjoin.distcache.filename";
-        private Map<String, User> users = new HashMap();
+        private static final String DISTCACHE_FILENAME_CONFIG = "replicatedjoin.distcache.filename";
+        private Map<String, User> users = new HashMap<String, User>();
 
         @Override
         protected void setup(Context context) throws IOException, InterruptedException {
