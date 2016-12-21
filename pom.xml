@@ -169,6 +169,12 @@
         </dependency>
         <dependency>
             <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-mapreduce-client-common</artifactId>
+            <version>${hadoop.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.hadoop</groupId>
             <artifactId>hadoop-hdfs</artifactId>
             <version>${hadoop.version}</version>
             <scope>provided</scope>
@@ -223,6 +229,11 @@
                     <artifactId>*</artifactId>
                 </exclusion>
             </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.htuple</groupId>
+            <artifactId>htuple-core</artifactId>
+            <version>0.1.1</version>
         </dependency>
     </dependencies>
 </project>
