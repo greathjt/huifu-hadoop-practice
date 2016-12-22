@@ -64,6 +64,7 @@ public class ReplicatedJoin extends Configured implements Tool {
         @Override
         protected void setup(Context context) throws IOException, InterruptedException {
             Path[] paths = DistributedCache.getLocalCacheFiles(context.getConfiguration());
+
             final String cacheFileName = context.getConfiguration().get(DISTCACHE_FILENAME_CONFIG);
             boolean found = false;
             if (paths != null) {
