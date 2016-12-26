@@ -141,13 +141,13 @@
     <orderEntry type="library" name="Maven: org.htuple:htuple-core:0.2.0-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: org.mockito:mockito-all:1.9.5" level="project" />
     <orderEntry type="library" name="Maven: org.apache.mrunit:mrunit:hadoop1:1.0.0" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.avro:avro-mapred:1.7.6-cdh5.8.3" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.avro:avro-ipc:1.7.6-cdh5.8.3" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.avro:avro-mapred:hadoop2:1.7.7" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.avro:avro-ipc:1.7.7" level="project" />
     <orderEntry type="library" name="Maven: org.apache.velocity:velocity:1.7" level="project" />
     <orderEntry type="library" name="Maven: org.mortbay.jetty:servlet-api:2.5-20081211" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.avro:avro-ipc:tests:1.7.6-cdh5.8.3" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.avro:avro:1.7.6-cdh5.8.3" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.avro:avro-ipc:tests:1.7.7" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.avro:avro:1.7.7" level="project" />
     <orderEntry type="library" name="Maven: com.thoughtworks.paranamer:paranamer:2.3" level="project" />
-    <orderEntry type="library" name="Maven: org.xerial.snappy:snappy-java:1.0.4.1" level="project" />
+    <orderEntry type="library" name="Maven: org.xerial.snappy:snappy-java:1.0.5" level="project" />
   </component>
 </module>

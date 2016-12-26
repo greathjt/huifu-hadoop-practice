@@ -3,10 +3,14 @@ package com.huifu.hadoop.hdfs.join.bloom;
 import com.huifu.hadoop.hdfs.model.User;
 import com.huifu.hadoop.util.AvroBytesRecord;
 
+import org.apache.avro.file.DataFileStream;
+import org.apache.avro.generic.GenericDatumReader;
 import org.apache.avro.generic.GenericRecord;
 import org.apache.avro.mapred.AvroKey;
 import org.apache.avro.mapreduce.AvroJob;
 import org.apache.avro.mapreduce.AvroKeyOutputFormat;
+import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.IOUtils;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.conf.Configured;
 import org.apache.hadoop.fs.Path;
@@ -25,7 +29,9 @@ import org.apache.hadoop.util.bloom.BloomFilter;
 import org.apache.hadoop.util.bloom.Key;
 import org.apache.hadoop.util.hash.Hash;
 
+import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 
 /**
  * Created by chao.hu on 2016/12/23.
@@ -34,6 +40,24 @@ public class BloomFilterCreator extends Configured implements Tool {
     public static void main(String[] args) throws Exception {
         int res = ToolRunner.run(new Configuration(), new BloomFilterCreator(), args);
         System.exit(res);
+    }
+
+    public static BloomFilter readFromAvro(InputStream is) throws IOException {
+        DataFileStream<Object> reader =
+                new DataFileStream<Object>(
+                        is, new GenericDatumReader<Object>());
+
+        reader.hasNext();
+        BloomFilter filter = new BloomFilter();
+        AvroBytesRecord.fromGenericRecord((GenericRecord) reader.next(), filter);
+        IOUtils.closeQuietly(is);
+        IOUtils.closeQuietly(reader);
+
+        return filter;
+    }
+
+    public static BloomFilter fromFile(File f) throws IOException {
+        return readFromAvro(FileUtils.openInputStream(f));
     }
 
     @Override
